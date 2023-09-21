@@ -30,7 +30,7 @@ workflow FASTQC_UMITOOLS_TRIMGALORE {
     umi_reads        = reads
     umi_log          = Channel.empty()
     umitools_version = Channel.empty()
-    if (with_umi) {
+    if (false && with_umi) {
         UMITOOLS_EXTRACT ( reads ).reads.set { umi_reads }
         umi_log          = UMITOOLS_EXTRACT.out.log
         umitools_version = UMITOOLS_EXTRACT.out.version
